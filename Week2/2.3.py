@@ -26,19 +26,26 @@ def checkValid(s):
         elif i == ')':
             if stack.peek() == '(':
                 stack.pop()
+            else:
+                stack.push(i)
         elif i == ']':
             if stack.peek() == '[':
                 stack.pop()
+            else:
+                stack.push(i)
         elif i == '>':
             if stack.peek() == '<':
                 stack.pop()
+            else:
+                stack.push(i)
     if stack.isEmpty():
         print("valid")
     else:
         print("invalid")
 
 stack = mystack()
-string1 = "[(<>)]( )(( )( ))"
+#string1 = "[(<>)]( )(( )( ))"
+string1 = "()<>><)([]]][]())))"
 checkValid(string1)
 
 
