@@ -19,10 +19,8 @@ def rsearch(amountOfQueens, ListOfQueens):
         if check(ListOfQueens, i):
             ListOfQueens.append(i)
             if len(ListOfQueens) == amountOfQueens:
-                if ListOfQueens not in solutions:
-                    solutions.append(ListOfQueens)
-                    rsearch(amountOfQueens, [])
-                    return True
+                solutions.append(list(ListOfQueens))
+                rsearch(amountOfQueens, ListOfQueens)
             else:
                 if rsearch(amountOfQueens, ListOfQueens):
                     return True
